@@ -17,6 +17,9 @@ var Tasks = sequelize.define("book", {
   imageLink: {
     type: Sequelize.STRING
   },
+  timeFrame: {
+    type: Sequelize.STRING
+  },
   category: {
     type: Sequelize.STRING
   }, 
@@ -25,7 +28,7 @@ var Tasks = sequelize.define("book", {
   }, 
   internetSearch:{
     type: Sequelize.STRING
-  }
+  },
 });
 
 // Syncs with DB
