@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Tasks', [
+    return queryInterface.bulkInsert('Task', [
       {task: 'Anode Rod Replacement', checked: false, description: 'Inspect Anode Rod in Water Heater', imageLink: 'http://www.azhomewater.com/images/product-amoderod.png', timeFrame: 'annually', category: 'plumbing', skillLevel: 'beginner', internetSearch: 'anode rode inspection', createdAt: new Date(), updatedAt:  new Date()}, 
       {task: 'Drain Water Heater', checked: false, description: 'Drain water heater to prevent sediment', imageLink: 'http://images.trulia.com/blogimg/6/5/8/7/1066338_1305628021732_o.jpg', timeFrame: 'annually', category: 'plumbing', skillLevel: 'beginner', internetSearch:   'how to drain water heater', createdAt: new Date(), updatedAt:  new Date()}, 
       {task: 'Turn off/on water supply valves under sinks and toilets', checked: false, description: 'Turn off/on water supply valves under sinks and toilets to prevent them from sticking.', imageLink: 'https://cdn1.tmbi.com/TFH/Step-By-Step/FH03MAY_SINKVA_03.JPG', timeFrame: 'annually', category: 'plumbing', skillLevel: 'beginner', internetSearch: 'how to turn off sink valves' , createdAt: new Date(), updatedAt:  new Date()}, 
