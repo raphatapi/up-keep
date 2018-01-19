@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Category = sequelize.define('Category', {
+  var Category = sequelize.define('Categories', {
     catName: DataTypes.STRING
   }, {
     classMethods: {

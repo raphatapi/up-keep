@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Task = sequelize.define('Task', {
+  var Task = sequelize.define('Tasks', {
     task: DataTypes.STRING,
     description: DataTypes.STRING,
     checked: DataTypes.BOOLEAN,
@@ -9,12 +9,24 @@ module.exports = (sequelize, DataTypes) => {
     category: DataTypes.STRING,
     skillLevel: DataTypes.STRING,
     internetSearch: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
   });
+
+  Task.associate = function(models) {
+    Task.hasOne(models.Category, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Task.hasOne(models.Skills, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+    Task.hasOne(models.Season, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Task;
 };

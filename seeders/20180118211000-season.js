@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Season', [
+    return queryInterface.bulkInsert('Seasons', [
       {timeName: 'Annually', createdAt: new Date(), updatedAt: new Date()},
       {timeName: 'Fall', createdAt: new Date(), updatedAt: new Date()},
       {timeName: 'Spring', createdAt: new Date(), updatedAt: new Date()},
@@ -12,6 +12,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Season', null, {truncate : true});
+    return queryInterface.bulkDelete('Seasons', null, {truncate : true});
   }
 };
