@@ -6,7 +6,7 @@ var auth = {
   };
 
   var terms = '';
-  var near = 'saltLakeCity';
+  var near = 'Salt Lake City';
 
   var accessor = {
     consumerSecret: auth.clientSecret,
