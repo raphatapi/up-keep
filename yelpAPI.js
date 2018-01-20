@@ -1,3 +1,20 @@
+var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.yelp.com/v3/businesses/search?term=restaurant&latitude=40.82783908257346&longitude=-74.10162448883057",
+    "method": "GET",
+    "headers": {
+      "authorization": "Bearer aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx",
+      "cache-control": "no-cache",
+    }
+  }
+  
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+
+
 fetch('https://api.yelp.com/oauth2/token?client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>', {
   method: 'POST',
   headers: {
@@ -27,4 +44,3 @@ fetch('https://api.yelp.com/oauth2/token?client_id=<CLIENT_ID>&client_secret=<CL
   .catch((err) => {
     console.log('err', err);
   })
-  

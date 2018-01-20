@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var videoPrefix = `https://www.youtube.com/embed/`;
+	var videoPrefix = "https://www.youtube.com/embed/";
 	var videoURL;
 
 	$.ajax({
