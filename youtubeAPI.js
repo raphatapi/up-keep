@@ -1,10 +1,12 @@
+alert("youtube working");
+
 $(document).ready(function(){
-	var videoPrefix = `https://www.youtube.com/embed/`;
+	var videoPrefix = "https://www.youtube.com/embed/";
 	var videoURL;
 
 	$.ajax({
 		url:"https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=&q10=how+to+fix+clogged+sink&key=AIzaSyDYJIP_3sxyE3-SL-Dh0xAP0BWL98W0-Qs",
-		method: "GET"
+		method:"GET"
 	}).done(function(result){
 		console.log(result);
 		result.items.forEach(function(item){
@@ -14,7 +16,8 @@ $(document).ready(function(){
 		})
 	})
 
-	$(document).on("click", ".general-video", function(){
+	$(document).on("click", "#searchButton", function(){
+		console.log("search button clicked");
 		$(".modal-body").empty();
 		$(".modal-body").append(`<iframe class="modal-iframe" src="${$(this).attr("data-url")}" allowfullscreen="allowfullscreen"></iframe>`);
 	})
