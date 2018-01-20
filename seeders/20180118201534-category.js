@@ -3,12 +3,12 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Categories', [
-      {catName: 'Plumbing', createdAt: new Date(), updatedAt: new Date()},
+      {catName: 'plumbing', createdAt: new Date(), updatedAt: new Date()},
       {catName: 'HVAC', createdAt: new Date(), updatedAt: new Date()},
-      {catName: 'Electrical', createdAt: new Date(), updatedAt: new Date()},
-      {catName: 'Landscaping', createdAt: new Date(), updatedAt: new Date()},
-      {catName: 'General home maintenance', createdAt: new Date(), updatedAt: new Date()},
-      {catName: 'Painting', createdAt: new Date(), updatedAt: new Date()}
+      {catName: 'electrical', createdAt: new Date(), updatedAt: new Date()},
+      {catName: 'landscaping', createdAt: new Date(), updatedAt: new Date()},
+      {catName: 'general home maintenance', createdAt: new Date(), updatedAt: new Date()},
+      {catName: 'painting', createdAt: new Date(), updatedAt: new Date()}
     ], {});
   },
 

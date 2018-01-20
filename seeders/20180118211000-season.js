@@ -3,11 +3,11 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Seasons', [
-      {timeName: 'Annually', createdAt: new Date(), updatedAt: new Date()},
-      {timeName: 'Fall', createdAt: new Date(), updatedAt: new Date()},
-      {timeName: 'Spring', createdAt: new Date(), updatedAt: new Date()},
-      {timeName: 'All seasons', createdAt: new Date(), updatedAt: new Date()},
-      {timeName: 'Summer', createdAt: new Date(), updatedAt: new Date()}
+      {timeName: 'annually', createdAt: new Date(), updatedAt: new Date()},
+      {timeName: 'fall', createdAt: new Date(), updatedAt: new Date()},
+      {timeName: 'spring', createdAt: new Date(), updatedAt: new Date()},
+      {timeName: 'all seasons', createdAt: new Date(), updatedAt: new Date()},
+      {timeName: 'summer', createdAt: new Date(), updatedAt: new Date()}
     ], {});
   },
 

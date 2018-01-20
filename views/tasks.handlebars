@@ -1,7 +1,12 @@
-<ul>
-    {{#each this.task}}
+<button id="filterTasks" class="btn-large" onclick="filterTask('data-category', 'HVAC')">Filter</button>
+
+<ul id="taskList">
+    {{#each task}}
         {{#unless this.checked}}
-            <li class="task">{{this.task}}</li>
+            <li class="task" data-category="{{this.category}}">{{this.task_name}}</li>
         {{/unless}}
     {{/each}}
 </ul>
+
+
+<script type="text/javascript" src="/js/tasks.js"></script>
