@@ -1,12 +1,28 @@
-<button id="filterTasks" class="btn-large" onclick="???">Filter</button>
+<button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button>
 
 <ul id="taskList">
     {{#each task}}
         {{#unless this.checked}}
-            <li class="task" data-category="{{this.category}}">{{this.task_name}}</li>
+            <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}">{{this.task_name}} ({{this.timeFrame}})</li>
         {{/unless}}
     {{/each}}
 </ul>
 
 
-<script type="text/javascript" src="/js/tasks.js"></script>
+<script>
+    function filterTask(attribute, seasonAttribute, filterValue) {
+    var tasks = $("#taskList").children();
+    tasks.each(function(i, task) {
+        var attributeValue = task.getAttribute(attribute);
+        if (attributeValue === filterValue) task.setAttribute("style", "display:visible;");
+        else task.setAttribute("style", "display:none;");
+    });
+}
+
+function handleFilterTasksClick() {
+    console.log("here?");
+    var list = [1, 2, 3];
+    //var filteredList = filterTask("blah", "blah", list);
+    filterTask('data-category', 'data-season', 'HVAC');
+}
+</script>

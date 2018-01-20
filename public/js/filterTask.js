@@ -9,6 +9,12 @@ export function filterTask(attribute, filterValue) {
     });
 }
 
+function handleFilterTasksClick() {
+    console.log("here?");
+    var list = [1, 2, 3];
+    var filteredList = filterTask(blah, blah, list);
+    // filterTask('data-category', 'HVAC');
+} 
 // export {filterTask};
 
 
