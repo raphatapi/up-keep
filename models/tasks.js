@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        Tasks.belongsToMany(models.Category, {
+        Tasks.hasOne(models.Category, {
           foreignKey: {
             allowNull: false
           }
