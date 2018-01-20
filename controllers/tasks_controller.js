@@ -6,3 +6,19 @@ router.get("/", function(req, res) {
     res.redirect("/upkeep");
 });
 
+router.get("/upkeep", function(req, res) {
+  db.Tasks.findAll({
+    include: [db.Category],
+    order: [
+      ["task", "ASC"]
+    ]
+  })
+  .then(function(dbTask) {
+    var hbsObject = {
+      task: dbTask
+    };
+    res.render("tasks", hbsObject);
+  });
+});
+
+module.exports = router;
