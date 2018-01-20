@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: function(models) {
-        Category.hasMany(models.Task);
+        Category.hasMany(models.Tasks);
       }
     }
   });

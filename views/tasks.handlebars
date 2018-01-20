@@ -1,7 +1,7 @@
 <ul>
-    {{#each task}}
+    {{#each this.task}}
         {{#unless this.checked}}
-            <li class="burgerType">{{this.task}}</li>
+            <li class="task">{{this.task}}</li>
         {{/unless}}
     {{/each}}
 </ul>

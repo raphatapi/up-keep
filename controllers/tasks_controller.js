@@ -10,7 +10,7 @@ router.get("/upkeep", function(req, res) {
   db.Tasks.findAll({
     include: [db.Category],
     order: [
-      ["task", "ASC"]
+      ["task_name", "ASC"]
     ]
   })
   .then(function(dbTask) {
