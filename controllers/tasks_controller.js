@@ -8,7 +8,6 @@ router.get("/", function(req, res) {
 
 router.get("/upkeep", function(req, res) {
   db.Tasks.findAll({
-    // include: [db.Category],
     order: [
       ["task_name", "ASC"]
     ]
@@ -20,5 +19,7 @@ router.get("/upkeep", function(req, res) {
     res.render("tasks", hbsObject);
   });
 });
+
+
 
 module.exports = router;

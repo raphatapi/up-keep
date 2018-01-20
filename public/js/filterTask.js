@@ -1,6 +1,6 @@
 // filterTasks("data-category", "HVAC");
 
-function filterTask(attribute,filterValue) {
+export function filterTask(attribute, filterValue) {
     var tasks = $("#taskList").children();
     tasks.each(function(i, task) {
         var attributeValue = task.getAttribute(attribute);
