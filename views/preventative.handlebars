@@ -92,14 +92,21 @@
 <script>
 
 $(".dropdown1, .dropdown2").change(function() {
+  var tasks = $("#taskList").children();
   var category = $("#category").val();
   var season = $('#season').val();
-  console.log(category, season);
-  var tasks = $("#taskList").children();
-    tasks.each(function(i, task) {
+  tasks.each(function(i, task) {
+    if (category === "category") {
+      if (task.getAttribute("data-season") === season) task.setAttribute("style", "display:visible;");
+        else task.setAttribute("style", "display:none;");
+    } else if (season === "season") {
+      if (task.getAttribute("data-category") === category) task.setAttribute("style", "display:visible;");
+        else task.setAttribute("style", "display:none;");
+    } else {
       if (task.getAttribute("data-category") === category && task.getAttribute("data-season") === season) task.setAttribute("style", "display:visible;");
-      else task.setAttribute("style", "display:none;");
-    });
+        else task.setAttribute("style", "display:none;");
+    }
+  });
 });
 
 </script>
