@@ -1,6 +1,30 @@
-// Dependencies
-// =============================================================
+'use strict';
 
+<<<<<<< HEAD
+module.exports = (sequelize, DataTypes) => {
+  var Tasks = sequelize.define('Tasks', {
+    task_name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    checked: DataTypes.BOOLEAN,
+    imageLink: DataTypes.STRING,
+    timeFrame: DataTypes.STRING,
+    category: DataTypes.STRING,
+    skillLevel: DataTypes.STRING,
+    internetSearch: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: function(models) {
+        Tasks.belongsTo(models.Category, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      }
+    }
+  });
+  return Tasks;
+};
+=======
 // Sequelize (capital) references the standard library
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references my connection to the DB.
@@ -36,3 +60,4 @@ Tasks.sync();
 
 // Makes the Book Model available for other files (will also create a table)
 module.exports = Task
+>>>>>>> development
