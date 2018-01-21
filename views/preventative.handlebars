@@ -18,25 +18,27 @@
         <div class="container">
             <h2>Individual Sections:</h2>
             
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">   Tutorials   
-              <span class="caret"></span></button>
-              <ul class="dropdown-menu">
-                    <li class="dropdown-header drophead"><strong>Category</strong></li>
-                <li data-category="plumbing">Plumbing</li>
-                <li data-category="HVAC">HVAC</li>
-                <li data-category="electrical">Electrical</li>
-                <li data-category="landscaping">Landscaping</li>
-                <li data-category="painting">Painting</li>
-                <li data-category="general home maintenance">General Home Maintenance</li>
-                <li class="divider"></li>
-                <li class="dropdown-header drophead"><strong>Season</strong></li>
-                <li data-season="anually">Annually</li>
-                <li data-season="all seasons">All Seasons</li>
-                <li data-season="spring">Spring</li>
-                <li data-season="summer">Summer</li>
-                <li data-season="fall">Fall</li>
-              </ul>
+            <div class="dropdown1">
+              <select id="category" class="dropdown">
+                <option value="category">CATEGORY</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="HVAC">HVAC</option>
+                <option value="electrical">Electrical</option>
+                <option value="Landscaping">Landscaping</option>
+                <option value="painting">Painting</option>
+                <option value="general home maintenance">General Home Maintenance</option>
+              </select>
+            </div>
+            <div class="dropdown2">
+              <select id="season" class="dropdown">
+                <option value="season">SEASON</option>
+                <option value="annually">Annually</option>
+                <option value="all seasons">All Seasons</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+              </select>
+            </div>
             </div>
           </div>
 <br>
@@ -54,7 +56,7 @@
             {{/each}}
             </ul>
           </div>
-  <button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button>
+  {{!-- <button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button> --}}
 
 
               <div class="container">
@@ -88,21 +90,16 @@
 </div>
 
 <script>
-    function filterTask(attribute, seasonAttribute, filterValue) {
-    var tasks = $("#taskList").children();
-    console.log
-    tasks.each(function(i, task) {
-        var attributeValue = task.getAttribute(attribute);
-        if (attributeValue === filterValue) task.setAttribute("style", "display:visible;");
-        else task.setAttribute("style", "display:none;");
-    });
-}
 
-  function handleFilterTasksClick() {
-    console.log("here?");
-    var list = $("#taskList").children().data('season');
-    //var filteredList = filterTask("blah", "blah", list);
-    filterTask('data-category', 'data-season', 'HVAC');
-}
+$(".dropdown1, .dropdown2").change(function() {
+  var category = $("#category").val();
+  var season = $('#season').val();
+  console.log(category, season);
+  var tasks = $("#taskList").children();
+    tasks.each(function(i, task) {
+      if (task.getAttribute("data-category") === category && task.getAttribute("data-season") === season) task.setAttribute("style", "display:visible;");
+      else task.setAttribute("style", "display:none;");
+    });
+});
 
 </script>
