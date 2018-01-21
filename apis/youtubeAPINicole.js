@@ -1,9 +1,10 @@
 alert("youtube working5");
 
-$("#searchButton").click(function(){
-var ytSearch = "anode rod replacement";
-// document.getElementById("youtubeSearch").value;	
-console.log(document.getElementById("youtubeSearch").value);	
+$(document).ready(function(){
+
+$("#searchButton").on("click", function(){
+var ytSearch = document.getElementbyId("youtubeSearch").value;;
+console.log("helloA", ytSearch);	
 var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + ytSearch +"&type=video&maxResults=4&key=AIzaSyDYJIP_3sxyE3-SL-Dh0xAP0BWL98W0-Qs"
 console.log("hello", queryURL);
 
@@ -30,4 +31,6 @@ var ytHead = "https://www.youtube.com/embed/";
 
 		};
 	});
-});	 
+});
+
+});
