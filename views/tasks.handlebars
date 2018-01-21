@@ -1,17 +1,104 @@
-<button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button>
+                <!--NAVBAR-->
+                <nav class="navbar navbar-default" id="navbar">
+                        <div class="container-fluid">
+                              <div class="navbar-header">
+                                <a class="navbar-brand" href="index.html"><strong>up-keep</strong></a>
+                              </div>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="preventative.html">Preventative</a></li>
+                                    <li><a href="howto.html">How do I</a></li>
+                                    <li><a href="findhelp.html">Get Help</a></li>
+                              </ul>
+                        </div>
+                    </nav>
 
-<ul id="taskList">
+        <img src="https://placeimg.com/2000/200/any">
+
+
+        <div class="container">
+            <h2>Individual Sections:</h2>
+            
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">   Tutorials   
+              <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                    <li class="dropdown-header drophead"><strong>Category</strong></li>
+                <li data-category="plumbing">Plumbing</li>
+                <li data-category="HVAC">HVAC</li>
+                <li data-category="electrical">Electrical</li>
+                <li data-category="landscaping">Landscaping</li>
+                <li data-category="painting">Painting</li>
+                <li data-category="general home maintenance">General Home Maintenance</li>
+                <li class="divider"></li>
+                <li class="dropdown-header drophead"><strong>Season</strong></li>
+                <li data-season="anually">Annually</li>
+                <li data-season="all seasons">All Seasons</li>
+                <li data-season="spring">Spring</li>
+                <li data-season="summer">Summer</li>
+                <li data-season="fall">Fall</li>
+              </ul>
+            </div>
+          </div>
+<br>
+          <div class="container checkbox" id="maintextarea">
+              <ul id="taskList">
+              {{#each task}}
+                {{#unless this.checked}}
+                    <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
+                        <input class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../public/img/icons/info.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../public/img/icons/camera1.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../public/img/icons/question.png"></a>
+                    </label></li>
+                {{/unless}}
+            {{/each}}
+            </ul>
+        </div>
+              <button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button>
+
+{{!-- <ul id="taskList">
     {{#each task}}
         {{#unless this.checked}}
             <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}">{{this.task_name}} ({{this.timeFrame}})</li>
         {{/unless}}
     {{/each}}
-</ul>
+</ul> --}}
 
+
+              <div class="container">
+                
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+              
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Selected Tasks</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>This is a large modal.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+                    <!--FOOTER-->
+    <div class="footer">
+        <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
+</div>
 
 <script>
     function filterTask(attribute, seasonAttribute, filterValue) {
     var tasks = $("#taskList").children();
+    console.log
     tasks.each(function(i, task) {
         var attributeValue = task.getAttribute(attribute);
         if (attributeValue === filterValue) task.setAttribute("style", "display:visible;");
@@ -21,8 +108,9 @@
 
 function handleFilterTasksClick() {
     console.log("here?");
-    var list = [1, 2, 3];
+    var list = $("#taskList").children().data('season');
     //var filteredList = filterTask("blah", "blah", list);
     filterTask('data-category', 'data-season', 'HVAC');
 }
+
 </script>
