@@ -1,32 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <!--BOOTSTRAP-->
-    <meta name=viewport content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-	<!--LINK TO CSS-->
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-    
-    <!--GOOGLE FONTS-->
-    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Chivo:700" rel="stylesheet">
-
-	<!--JQUERY CDN-->
-	<script
-  	src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-  	integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-    crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="../models/java.js"></script>
-    
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-</head>
-<body>
                 <!--NAVBAR-->
                 <nav class="navbar navbar-default" id="navbar">
                         <div class="container-fluid">
@@ -60,27 +31,30 @@
                 <li data-category="general home maintenance">General Home Maintenance</li>
                 <li class="divider"></li>
                 <li class="dropdown-header drophead"><strong>Season</strong></li>
-                <li data-category="anually">Annually</li>
-                <li data-category="all seasons">All Seasons</li>
-                <li data-category="spring">Spring</li>
-                <li data-category="summer">Summer</li>
-                <li data-category="fall">Fall</li>
+                <li data-season="anually">Annually</li>
+                <li data-season="all seasons">All Seasons</li>
+                <li data-season="spring">Spring</li>
+                <li data-season="summer">Summer</li>
+                <li data-season="fall">Fall</li>
               </ul>
             </div>
           </div>
 <br>
           <div class="container checkbox" id="maintextarea">
-               <li><label><input class="exampleB" type="checkbox" value="">some task
-                
-                <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../public/img/icons/info.png"></a>
-
-                <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../public/img/icons/camera1.png"></a>
-
-                <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../public/img/icons/question.png"></a>
-
-            </label></li>
-
-              </div>
+            <ul id="taskList">
+              {{#each task}}
+                {{#unless this.checked}}
+                    <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
+                        <input class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/info.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/camera1.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../img/icons/question.png"></a>
+                    </label></li>
+                {{/unless}}
+            {{/each}}
+            </ul>
+          </div>
+  <button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button>
 
 
               <div class="container">
@@ -112,5 +86,23 @@
     <div class="footer">
         <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
 </div>
-           
-</body>
+
+<script>
+    function filterTask(attribute, seasonAttribute, filterValue) {
+    var tasks = $("#taskList").children();
+    console.log
+    tasks.each(function(i, task) {
+        var attributeValue = task.getAttribute(attribute);
+        if (attributeValue === filterValue) task.setAttribute("style", "display:visible;");
+        else task.setAttribute("style", "display:none;");
+    });
+}
+
+  function handleFilterTasksClick() {
+    console.log("here?");
+    var list = $("#taskList").children().data('season');
+    //var filteredList = filterTask("blah", "blah", list);
+    filterTask('data-category', 'data-season', 'HVAC');
+}
+
+</script>

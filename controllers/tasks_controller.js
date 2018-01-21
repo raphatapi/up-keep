@@ -16,7 +16,7 @@ router.get("/upkeep", function(req, res) {
     var hbsObject = {
       task: dbTask
     };
-    res.render("tasks", hbsObject);
+    res.render("preventative", hbsObject);
   });
 });
 
