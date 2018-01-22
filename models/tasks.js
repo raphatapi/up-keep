@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
           }
         });
+        Tasks.belongsTo(models.Season, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
       }
     }
   });

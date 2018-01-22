@@ -23,8 +23,8 @@
                 <option value="category">CATEGORY</option>
                 <option value="plumbing">Plumbing</option>
                 <option value="HVAC">HVAC</option>
-                <option value="electrical">Electrical</option>
-                <option value="Landscaping">Landscaping</option>
+                <option value="roofing">Roofing</option>
+                <option value="landscaping">Landscaping</option>
                 <option value="painting">Painting</option>
                 <option value="general home maintenance">General Home Maintenance</option>
               </select>
@@ -47,7 +47,7 @@
               {{#each task}}
                 {{#unless this.checked}}
                     <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
-                        <input id="{{this.id}}"class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
+                        <input id="{{this.id}}" name="{{this.task_name}}" class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/info.png"></a>
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/camera1.png"></a>
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../img/icons/question.png"></a>
@@ -71,7 +71,6 @@
                         <h4 class="modal-title">Selected Tasks</h4>
                       </div>
                       <div class="modal-body">
-                        <p id="selected-tasks"></p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -108,13 +107,14 @@ $(".dropdown1, .dropdown2").change(function() {
 });
 
 function getSelected() {
-  
   var selected = [];
-  $('#taskList input:checked').each(function() {
-      selected.push($(this).attr('value'));
+  $('#taskList input:checked').each(function(i) {
+      selected.push($(this).attr('name'));
       console.log(selected);
+      var selectedTask = $("</p>");
+      selectedTask.text(selected[i]);
+      $(".modal-body").prepend(selectedTask);
   });
-
 };
 
 
