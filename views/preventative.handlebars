@@ -48,12 +48,12 @@
                 {{#unless this.checked}}
                     <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
                         <input id="{{this.id}}" name="{{this.task_name}}" class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.skillLevel}})
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/info.png"></a>
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/camera1.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="../img/icons/info.png"></a>
+                        <a href="#" title="{{this.description}}" data-toggle="popover" data-trigger="hover" data-img= "{{this.imageLink}}"> <img src="../img/icons/camera1.png"></a>
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../img/icons/question.png"></a>
                     </label></li>
                 {{/unless}}
-            {{/each}}
+              {{/each}}
             </ul>
           </div>
 
@@ -85,40 +85,3 @@
     <div class="footer">
         <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
 </div>
-
-<script>
-
-$(".dropdown1, .dropdown2").change(function() {
-  var tasks = $("#taskList").children();
-  var category = $("#category").val();
-  var season = $("#season").val();
-  tasks.each(function(i, task) {
-    if (category === "category") {
-      if (task.getAttribute("data-season") === season) task.setAttribute("style", "display:visible;");
-        else task.setAttribute("style", "display:none;");
-    } else if (season === "season") {
-      if (task.getAttribute("data-category") === category) task.setAttribute("style", "display:visible;");
-        else task.setAttribute("style", "display:none;");
-    } else {
-      if (task.getAttribute("data-category") === category && task.getAttribute("data-season") === season) task.setAttribute("style", "display:visible;");
-        else task.setAttribute("style", "display:none;");
-    }
-  });
-});
-
-function getSelected() {
-  var selected = [];
-  $('#taskList input:checked').each(function(i) {
-      selected.push($(this).attr('name'));
-      console.log(selected);
-      var selectedTask = $("</p>");
-      selectedTask.text(selected[i]);
-      $(".modal-body").prepend(selectedTask);
-  });
-};
-
-$('#myModal').on('hidden.bs.modal', function () {
- location.reload();
-})
-
-</script>
