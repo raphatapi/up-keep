@@ -47,7 +47,7 @@
               {{#each task}}
                 {{#unless this.checked}}
                     <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
-                        <input class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
+                        <input id="{{this.id}}"class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.timeFrame}})
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/info.png"></a>
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content= "some content"> <img src="../img/icons/camera1.png"></a>
                         <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../img/icons/question.png"></a>
@@ -56,13 +56,11 @@
             {{/each}}
             </ul>
           </div>
-  {{!-- <button id="filterTasks" class="btn-large" onclick="handleFilterTasksClick()">Filter</button> --}}
-
 
               <div class="container">
                 
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+                <button type="button" class="btn btn-info btn-lg" onclick="getSelected()" data-toggle="modal" data-target="#myModal">Submit</button>
               
                 <!-- Modal -->
                 <div class="modal fade" id="myModal" role="dialog">
@@ -73,7 +71,7 @@
                         <h4 class="modal-title">Selected Tasks</h4>
                       </div>
                       <div class="modal-body">
-                        <p>This is a large modal.</p>
+                        <p id="selected-tasks"></p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -108,5 +106,17 @@ $(".dropdown1, .dropdown2").change(function() {
     }
   });
 });
+
+function getSelected() {
+  
+  var selected = [];
+  $('#taskList input:checked').each(function() {
+      selected.push($(this).attr('value'));
+      console.log(selected);
+  });
+
+};
+
+
 
 </script>
