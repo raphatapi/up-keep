@@ -51,7 +51,7 @@
                                 <div class="col-sm-6 col-sm-offset-3">
                                     <div id="imaginary_container"> 
                                         <div class="input-group stylish-input-group">
-                                            <input type="text" class="form-control"  placeholder="Search" >
+                                            <input id= "yelpSearch" type="test" class="form-control"  placeholder="Search" >
                                             <span class="input-group-addon">
                                                 <button type="submit">
                                                     <span class="glyphicon glyphicon-search"></span>
@@ -64,12 +64,49 @@
                         </div>
 
                         <div class="container" id="yelp">
-
+                            
     
                             </div>
 
        <!--FOOTER-->
        <div class="footer">
             <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
-    </div>                  
+    </div>            
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+$("#searchButton").on("click", function(){
+var yelpSearch = document.getElementbyId("yelpSearch").value;;
+    
+var queryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&location=saltlakecity&sort_by=rating&limit=5"
+
+
+$.ajax({
+    header: {
+        Authorization: "Bearer aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
+    },
+    url:queryURL,
+    method:"GET"    
+}).done(function(result){
+    var searchResults = result.items;
+    for(var i=0; i < 5; i++) {
+        var name = searchResults[i].name;
+        var image = searchResults[i].image_url;
+        var URL = searchResults[i].url;
+        var rating = searchResults[i].rating;
+        console.log("see me now?");
+
+        $("#yelp").append(`<div class="how to">
+            <img src = "${image}">
+            ${name}
+            ${URL}
+            ${rating}
+        </div>`
+        );
+    };
+});
+});
+});
+    </script>      
 </body>
