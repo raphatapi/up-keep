@@ -2,13 +2,13 @@
                 <nav class="navbar navbar-default" id="navbar">
                         <div class="container-fluid">
                               <div class="navbar-header">
-                                <a class="navbar-brand" href="index.html"><strong>up-keep</strong></a>
+                                <a class="navbar-brand" href="/upkeep"><strong>up-keep</strong></a>
                               </div>
                                 <ul class="nav navbar-nav">
-                                    <li><a href="preventative.html">Preventative</a></li>
-                                    <li><a href="howto.html">How do I</a></li>
-                                    <li><a href="findhelp.html">Get Help</a></li>
-                              </ul>
+                                    <li><a href="/upkeep/preventative">Preventative</a></li>
+                                    <li><a href="/upkeep/howto">How do I</a></li>
+                                    <li><a href="/upkeep/findhelp">Get Help</a></li>
+                                </ul>
                         </div>
                     </nav>
 
@@ -48,9 +48,9 @@
                 {{#unless this.checked}}
                     <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
                         <input id="{{this.id}}" name="{{this.task_name}}" class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.skillLevel}})
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="../img/icons/info.png"></a>
-                        <a href="#" title="{{this.description}}" data-toggle="popover" data-trigger="hover" data-img= "{{this.imageLink}}"> <img src="../img/icons/camera1.png"></a>
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="../img/icons/question.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="/img/icons/info.png"></a>
+                        <a href="#" title="{{this.description}}" data-toggle="popover" data-trigger="hover" data-img= "{{this.imageLink}}"> <img src="/img/icons/camera1.png"></a>
+                        <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="/img/icons/question.png"></a>
                     </label></li>
                 {{/unless}}
               {{/each}}
