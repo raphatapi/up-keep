@@ -75,7 +75,25 @@ input[type=checkbox].exampleB {
     color: rgb(53, 53, 53);
 }
 
-
+@media screen {
+    #printSection {
+        display: none;
+    }
+  }
+  
+  @media print {
+    body * {
+      visibility:hidden;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    #printSection {
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  }
 
 @media only screen and (max-width: 768px) {
 	.navbar-default {
