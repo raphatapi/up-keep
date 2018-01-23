@@ -4,7 +4,7 @@ $(document).ready(function(){
       html: true,
       trigger: 'hover',
       placement: 'top',
-      content: function(){return '<img src="'+$(this).data('img') + '" height="250" width="295" />';}
+      content: function(){return '<img src="'+$(this).data('img') + '" height="200" width="245" />';}
     }
 
     );
