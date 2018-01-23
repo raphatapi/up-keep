@@ -3,12 +3,12 @@ $(document).ready(function(){
     $("#searchButton").on("click", function(){
     var yelpSearch = document.getElementbyId("yelpSearch").value;;
     	
-    var queryURL = "https://api.yelp.com/v3/businesses/search?term={term}&location={location}&sort_by=rating&limit=5"
-    
+    var queryURL = "https://api.yelp.com/v3/businesses/search?term={term}&location={location}&sort_by=rating&limit=5&key=aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
+    var queryURL2 = "https://api.yelp.com/oauth2/token"
     
     $.ajax({
         header: {
-            Authorization: "Bearer aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
+            "Authorization": aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
         },
 		url:queryURL,
 		method:"GET"
