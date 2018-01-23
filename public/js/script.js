@@ -57,10 +57,10 @@ $(document).ready(function(){
     var selected = [];
     $('#taskList input:checked').each(function(i) {
         selected.push($(this).attr('name'));
-        console.log(selected);
         var selectedTask = $("</p>");
         selectedTask.attr("id", "checkbox");
         selectedTask.text(selected[i]);
+        selectedTask.prepend('<img id="check" src="../img/icons/checked.png" />');
         $(".modal-body").prepend(selectedTask);
     });
   };

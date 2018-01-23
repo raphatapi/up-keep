@@ -83,6 +83,12 @@ input[type=checkbox].exampleB {
 
 }
 
+#check {
+    width: 30px;
+    height: 30px;
+    margin-right: 1%;
+}
+
 .footer {
     position: fixed;
     left: 0;
