@@ -4,7 +4,7 @@ $(document).ready(function(){
       html: true,
       trigger: 'hover',
       placement: 'top',
-      content: function(){return '<img src="'+$(this).data('img') + '" height="200" width="200" />';}
+      content: function(){return '<img src="'+$(this).data('img') + '" height="200" width="245" />';}
     }
 
     );
@@ -59,6 +59,7 @@ $(document).ready(function(){
         selected.push($(this).attr('name'));
         console.log(selected);
         var selectedTask = $("</p>");
+        selectedTask.attr("id", "checkbox");
         selectedTask.text(selected[i]);
         $(".modal-body").prepend(selectedTask);
     });
