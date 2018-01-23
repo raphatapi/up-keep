@@ -3,7 +3,7 @@ body{
     font-family: 'Chivo', sans-serif;
     font-family: 'Allerta Stencil', sans-serif;
     background-image: url("../img/backgrounds/brickwall1.png");
-    background-color: aquamarine;
+    background-color: gray;
     min-height: 100%;
 }
 
