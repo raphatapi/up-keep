@@ -77,6 +77,15 @@
                       <div class="modal-body">
                       </div>
                       <div class="modal-footer">
+                        <div title="Add to Calendar" class="addeventatc">
+                            Add to Calendar
+                            <span class="start">02/06/2018 08:00 AM</span>
+                            <span class="end">02/06/2018 10:00 AM</span>
+                            <span class="timezone">America/Los_Angeles</span>
+                            <span class="title">Summary of the event</span>
+                            <span class="description">Description of the event</span>
+                            <span class="location">Location of the event</span>
+                        </div>
                         <button id="btnPrint" type="button" class="btn btn-default">Print</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       </div>
@@ -91,3 +100,19 @@
     <div class="footer-fixed">
         <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
 </div>
+
+<script>
+window.addeventasync = function(){
+    
+  addeventatc.register('button-dropdown-click', function(obj){
+      
+        /* Log */
+        console.log('button-dropdown-click -> ' + obj.id + ', service -> ' + obj.service);
+
+        /* Track event click with e.g. Google Analytics (using analytics.js)
+        https://developers.google.com/analytics/devguides/collection/analyticsjs/events */
+        ga('send', 'event', 'MyEvent', 'play', 'Fall Campaign');
+
+    });
+};
+</script>
