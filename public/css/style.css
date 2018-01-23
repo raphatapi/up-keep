@@ -94,12 +94,12 @@ input[type=checkbox].exampleB {
 }
 
 .footer-fixed {  
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: rgb(247, 247, 247);
     color: rgb(87, 86, 86);
     text-align: center;
+    margin-bottom: 0%;
+    margin-top: 1%;
 }
 
 .drophead{
@@ -112,9 +112,7 @@ input[type=checkbox].exampleB {
     font-size: 18px;
 }
 
-#btnPrint{
-    padding-bottom: 1%;
-}
+
 
 @media screen {
     #printSection {
