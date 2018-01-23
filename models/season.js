@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Season = sequelize.define('Seasons', {
-    timeName: DataTypes.STRING
+    timeFrame: DataTypes.STRING
   });
   return Season;
 };
