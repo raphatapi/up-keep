@@ -12,7 +12,9 @@
                         </div>
                     </nav>
 
-        <img src="https://placeimg.com/2000/200/any">
+        <div class="page-header">
+  <img id="checkheader" src="/img/pictures/check.jpg">
+</div>
 
 
         <div class="container">
@@ -48,9 +50,9 @@
                 {{#unless this.checked}}
                     <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
                         <input id="{{this.id}}" name="{{this.task_name}}" class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.skillLevel}})
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="/img/icons/info.png"></a>
+                        {{!-- <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="/img/icons/info.png"></a> --}}
                         <a href="#" title="{{this.description}}" data-toggle="popover" data-trigger="hover" data-img= "{{this.imageLink}}"> <img src="/img/icons/camera1.png"></a>
-                        <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="/img/icons/question.png"></a>
+                        {{!-- <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="/img/icons/question.png"></a> --}}
                     </label></li>
                 {{/unless}}
               {{/each}}
@@ -85,6 +87,6 @@
 
 
                     <!--FOOTER-->
-    <div class="footer">
+    <div class="footer-fixed">
         <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
 </div>
