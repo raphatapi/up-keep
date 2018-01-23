@@ -27,7 +27,7 @@ $(document).ready(function(){
                 var youtubeVidID = newResults[i].id.videoId;
     
                 videoURL = `${ytHead}${youtubeVidID}`;
-                $("#main-content").append(`<div class="general-video" data-toggle="modal" data-target="#myModal" data-url="${videoURL}"><iframe class="video-iframe" height="325" width="375" src="${videoURL}" allowfullscreen="allowfullscreen"></iframe></div>`);
+                $("#main-content").append(`<div class="general-video" data-toggle="modal" data-target="#myModal" data-url="${videoURL}"><iframe class="video-iframe" height="315" width="355" src="${videoURL}" allowfullscreen="allowfullscreen"></iframe></div>`);
                 console.log(videoURL);
     
             };
