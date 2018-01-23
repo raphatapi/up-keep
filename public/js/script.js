@@ -3,7 +3,7 @@ $(document).ready(function(){
     $('[data-toggle="popover"]').popover({
       html: true,
       trigger: 'hover',
-      placement: 'bottom',
+      placement: 'top',
       content: function(){return '<img src="'+$(this).data('img') + '" height="200" width="200" />';}
     }
 
