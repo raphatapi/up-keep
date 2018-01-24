@@ -14,9 +14,7 @@ body{
     font-size: 20px;
 }
 
-#bg2{
-    opacity: .5;
-}
+
 .navbar{
     margin: 0;
     background-color: rgb(247, 247, 247);
@@ -27,6 +25,12 @@ body{
 .page-header{
     -webkit-box-shadow: 2px 2px 8px 1px rgba(51, 51, 51, 0.973);
     box-shadow: 2px 2px 4px 1px rgb(53, 53, 53);
+}
+
+.yelpshadow{
+    -webkit-box-shadow: 2px 2px 8px 1px rgba(51, 51, 51, 0.973);
+    box-shadow: 2px 2px 4px 1px rgb(53, 53, 53);
+    margin-top: .7%
 }
 
 #main{
@@ -252,11 +256,23 @@ input[type=checkbox].exampleB {
 	.navbar-default {
 display: none;
     }
+    .page-header{
+        display: none;
+    }
+    .page-header1{
+        display: none;
+    }
+    .page-header2{
+        display: none;
+    }
     
     @media only screen and (max-width: 768px) {
         #mainbtn{
             height: 35%;
             width: 35%;
+        }
+        #howtodesc{
+            font-size: 12px;
         }
     }
 
