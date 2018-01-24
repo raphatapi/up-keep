@@ -36,6 +36,7 @@ router.get('/upkeep/findhelp', function(req, res) {
 // var bearerToken = 'aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx';
 
 // add a route for doing a yelp search
+
 // router.get("/api/yelp/:search", function(req, res) {
 //   // build the query to get the data from Yelp
 //   this.console.log("WTF JANET");
@@ -54,4 +55,11 @@ router.get('/upkeep/findhelp', function(req, res) {
 
 
 
+
+
+router.get('/upkeep/about', function(req, res) {
+  res.render('about', { title: 'About Us' });
+});
+
 module.exports = router;
+
