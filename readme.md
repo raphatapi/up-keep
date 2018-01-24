@@ -1,6 +1,6 @@
-# up-keep
+# up-keep 🛠️
 
-# Find preventative maintenance tasks, how to perform them and get in touch with a professional :wrench:
+## Find preventative maintenance tasks, how to perform them and get in touch with a professional :wrench:
 
 ### Click [here](https://up-keeps.herokuapp.com/upkeep) to start with your projects: [up-keep](https://up-keeps.herokuapp.com/upkeep)
 
