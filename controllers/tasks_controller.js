@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
+var request = require("request");
 
 router.get("/", function(req, res) {
     res.redirect("/upkeep");
@@ -37,9 +38,9 @@ var bearerToken = 'aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaE
 
 // add a route for doing a yelp search
 router.get("/api/yelp/:search", function(req, res) {
+  console.log(req);
   // build the query to get the data from Yelp
   var yelpURL = "https://api.yelp.com/v3/businesses/search?term=" + req.params.search + "&location=saltlakecity&sort_by=rating&limit=5";
-
   // use the request package to execute an HTTP request to yelp
   request.get(yelpURL, {
     'auth': {

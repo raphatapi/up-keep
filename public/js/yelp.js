@@ -1,4 +1,4 @@
-    $(document).ready(function(){
+ window.onload = function(){
 
         $("#searchButton").on("click", function(){
             $("#yelp").empty();
@@ -26,4 +26,4 @@
                 };
             });
         });
-    });
+    };
