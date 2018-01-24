@@ -52,6 +52,8 @@ router.get("/api/yelp/:search", function(req, res) {
   });
 });
 
-
+router.get('/upkeep/about', function(req, res) {
+  res.render('about', { title: 'About Us' });
+});
 
 module.exports = router;
