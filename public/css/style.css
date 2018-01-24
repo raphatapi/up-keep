@@ -185,6 +185,11 @@ input[type=checkbox].exampleB {
 
 }
 
+.fb-login-button{
+    float: right;
+    padding-top: 2px;
+}
+
 #check {
     width: 30px;
     height: 30px;
