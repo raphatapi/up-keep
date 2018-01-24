@@ -1,6 +1,6 @@
 # up-keep
 
-# Find preventative maintenance tasks, how to perform them and get in touch with a professional :hamburger:
+# Find preventative maintenance tasks, how to perform them and get in touch with a professional :wrench:
 
 ### Click [here](https://up-keeps.herokuapp.com/upkeep) to start with your projects: [up-keep](https://up-keeps.herokuapp.com/upkeep)
 
@@ -24,12 +24,25 @@
 
 ### Built with MySQL, Node, Express, Handlebars, Sequelize, APIs and (and love!:heart:).
 
-### What does it do?
+### How to run it locally?
 
-* Burger Bracket is a burger joint app that lets users create burgers they'd like to eat.
+* Clone the repo using a terminal:
+`https://github.com/PurpleTreeUofU/upkeep.git`
 
-* Whenever a user submits a burger's name, the app will display the burger waiting to be devoured on the `New Burger` side of the page with a choice to add a customer.
+* Install dependencies:
+`npm install`
 
-* Each of those burgers also has a `Devour it` button. When the user clicks it, the burger will move to the `Burgers Devoured` area and display the information about the customer.
+* Open MySQL Workbench(Windows) or Sequel Pro(Mac) and create a database `upkeep_bd`. Then, run the following to seed the database:
+`sequelize db:seed:all`
 
-* The app will store every burger in a database, whether devoured or not.
+* Go to `config.json` file and update the development credentials to yours from MySQL:
+`"development": {
+      "username": "YOUR_USERNAME",
+      "password": "YOUR_PASSWORD",
+      "database": "upkeep_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    }`
+
+*Start the server:
+`npm start`
