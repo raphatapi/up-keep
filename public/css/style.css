@@ -252,11 +252,23 @@ input[type=checkbox].exampleB {
 	.navbar-default {
 display: none;
     }
+    .page-header{
+        display: none;
+    }
+    .page-header1{
+        display: none;
+    }
+    .page-header2{
+        display: none;
+    }
     
     @media only screen and (max-width: 768px) {
         #mainbtn{
             height: 35%;
             width: 35%;
+        }
+        #howtodesc{
+            font-size: 12px;
         }
     }
 
