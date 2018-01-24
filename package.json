@@ -16,7 +16,9 @@
     "sequelize": "^4.31.2",
     "sequelize-cli": "^3.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nightmare": "^2.10.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
