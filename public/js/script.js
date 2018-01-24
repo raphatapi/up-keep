@@ -50,28 +50,25 @@ $(document).ready(function(){
         $printSection.appendChild(domClone);
         window.print();
     }
-    
  });
 
- function getSelected() {
-    var selected = [];
-    $('#taskList input:checked').each(function(i) {
-        selected.push($(this).attr('name'));
-        var selectedTask = $("</p>");
-        selectedTask.attr("id", "checkbox");
-        selectedTask.text(selected[i]);
-        selectedTask.prepend('<img id="check" src="../img/icons/checked.png" />');
-        $(".modal-body").prepend(selectedTask);
-    });
-  };
+function getSelected() {
+  var selected = [];
+  $('#taskList input:checked').each(function(i) {
+      selected.push($(this).attr('name'));
+      var selectedTask = $("</p>");
+      selectedTask.attr("id", "checkbox");
+      selectedTask.text(selected[i]);
+      selectedTask.prepend('<img id="check" src="../img/icons/checked.png" />');
+      $(".modal-body").prepend(selectedTask);
+  });
+};
 
-  function toCalendar() {
-    var calendar = [];
-    $('#taskList input:checked').each(function(i) {
-        calendar.push($(this).attr('name'));
-        var calendarTask = $("</span>");
-        calendarTask.attr("class", "description");
-        calendarTask.text(calendar[i]);
-        $(".addeventatc").prepend(calendarTask);
-    });
-  };
+function sendMail()
+{
+    var body = [];
+    $('#taskList input:checked').each(function(i){
+      body.push("%0D" + $(this).attr('name') + "%20");
+    })
+    window.location.href = "mailto:?subject=up-keep Preventative Tasks&body=Here is what you need to take care of: %0D" + body + "%0D";
+}
