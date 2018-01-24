@@ -13,6 +13,7 @@
     "method-override": "^2.3.10",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
+    "request": "^2.83.0",
     "sequelize": "^4.31.2",
     "sequelize-cli": "^3.2.0"
   },
