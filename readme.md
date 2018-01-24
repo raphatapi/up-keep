@@ -20,9 +20,9 @@
 
 ### It's also mobile friendly:
 
-<!-- ![Mobile Gif](/public/images/mobile.gif) -->
+![Mobile Gif](/public/img/pictures/mobile.gif)
 
-### Built with MySQL, Node, Express, Handlebars, Sequelize, APIs and (and love!:heart:).
+### Built with MySQL, Node, Express, Handlebars, Sequelize and APIs.
 
 ### How to run it locally?
 
