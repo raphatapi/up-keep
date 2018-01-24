@@ -69,7 +69,6 @@ input[type=checkbox].exampleB {
     transform: scale(1.75);
   }
 
-<<<<<<< HEAD
   
   .page-header{
       margin: 0%;
@@ -84,22 +83,25 @@ input[type=checkbox].exampleB {
         margin: 0%;
         padding: 0%;
         background: #5EB3E9;
+        text-align: center;
         -webkit-box-shadow: 2px 2px 8px 1px rgba(15, 15, 15, 0.973);
         box-shadow: 2px 2px 4px 1px rgb(43, 42, 42);
         border-top: 1px;
         border-top-style: solid;
         border-top-color: black;
     }
+
     
     .page-header2{
         margin: 0%;
         padding: 0%;
-        background: rgb(255, 255, 255);
+        background-color: white;
         -webkit-box-shadow: 2px 2px 8px 1px rgba(15, 15, 15, 0.973);
         box-shadow: 2px 2px 4px 1px rgb(43, 42, 42);
         border-top: 1px;
         border-top-style: solid;
         border-top-color: rgb(82, 82, 82);
+        text-align: center;
     }
     
     .general-video{
@@ -119,6 +121,12 @@ input[type=checkbox].exampleB {
     #checkheader{
         height: 150px;
         
+    }
+
+    #helpheader{
+        height: 150px;
+        float: center;
+        background-color: white;
     }
     
     #check {
@@ -151,7 +159,6 @@ input[type=checkbox].exampleB {
         
     }
 
-=======
 #ftext{
     padding-top: 1%;
 }
@@ -165,27 +172,6 @@ input[type=checkbox].exampleB {
     border-top-color: rgb(83, 83, 83);
 }
 
-.page-header1{
-    margin: 0%;
-    padding: 0%;
-    background: #5EB3E9;
-    -webkit-box-shadow: 2px 2px 8px 1px rgba(15, 15, 15, 0.973);
-    box-shadow: 2px 2px 4px 1px rgb(43, 42, 42);
-    border-top: 1px;
-    border-top-style: solid;
-    border-top-color: black;
-}
-
-.page-header2{
-    margin: 0%;
-    padding: 0%;
-    background: rgb(223, 223, 223);
-    -webkit-box-shadow: 2px 2px 8px 1px rgba(15, 15, 15, 0.973);
-    box-shadow: 2px 2px 4px 1px rgb(43, 42, 42);
-    border-top: 1px;
-    border-top-style: solid;
-    border-top-color: rgb(82, 82, 82);
-}
 
 .general-video{
     height:315px;
@@ -230,7 +216,6 @@ input[type=checkbox].exampleB {
     bottom: 0;
     margin-top: 1%;
 }
->>>>>>> 50cc9874ab0e8de64bdfcd7f0aca2d1161e1e119
 
 .drophead{
     font-size: 18px;
