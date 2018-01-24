@@ -86,6 +86,7 @@
                             <span class="description">Description of the event</span>
                             <span class="location">Location of the event</span>
                         </div>
+                        <input type="button" value="Mail" onClick="window.location.href='mailto:someone@gmail.com';" />
                         <button id="btnPrint" type="button" class="btn btn-default">Print</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       </div>
@@ -112,19 +113,3 @@
     <div class="footer">
         <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
 </div>
-
-<script>
-window.addeventasync = function(){
-    
-  addeventatc.register('button-dropdown-click', function(obj){
-      
-        /* Log */
-        console.log('button-dropdown-click -> ' + obj.id + ', service -> ' + obj.service);
-
-        /* Track event click with e.g. Google Analytics (using analytics.js)
-        https://developers.google.com/analytics/devguides/collection/analyticsjs/events */
-        ga('send', 'event', 'MyEvent', 'play', 'Fall Campaign');
-
-    });
-};
-</script>

@@ -64,3 +64,14 @@ $(document).ready(function(){
         $(".modal-body").prepend(selectedTask);
     });
   };
+
+  function toCalendar() {
+    var calendar = [];
+    $('#taskList input:checked').each(function(i) {
+        calendar.push($(this).attr('name'));
+        var calendarTask = $("</span>");
+        calendarTask.attr("class", "description");
+        calendarTask.text(calendar[i]);
+        $(".addeventatc").prepend(calendarTask);
+    });
+  };
