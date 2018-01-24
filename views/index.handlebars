@@ -1,0 +1,105 @@
+                <!--NAVBAR-->
+        <nav class="navbar navbar-default" id="navbar">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="/upkeep"><strong>{{title}}</strong></a>
+                  </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/upkeep/preventative">Preventative</a></li>
+                        <li><a href="/upkeep/howto">How do I</a></li>
+                        <li><a href="/upkeep/findhelp">Get Help</a></li>
+                  </ul>
+            </div>
+        </nav>
+              
+                <!--CAROUSEL-->
+        <div id="carousel-example-generic caro" class="carousel slide" data-ride="carousel">
+                
+              
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" id="caro">
+                    <div class="item active">
+                        <img class="caro" src="/img/carousel/winter.jpg">
+                    </div>
+
+                    <div class="item">
+                        <img class="caro" src="/img/carousel/spring.jpg">
+                    </div>
+
+                    <div class="item">
+                        <img class="caro" src="/img/carousel/summer.jpg">
+                    </div>
+                    
+                    <div class="item">
+                        <img class="caro" src="/img/carousel/fall1.jpg">
+                    </div>
+                </div>
+              
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                  
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                  
+                </a>
+              </div>
+
+       <!-- <div id="upkeep" class="text-center"><p>up-keep</p></div> -->
+            <!--MAIN BODY CONTAINER WITH ICON BUTTONS-->   
+    <div class="container" id="main">
+        <div>
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+
+
+                        <script> function EvalSound(soundobj) 
+                            {var thissound=document.getElementById(soundobj); thissound.play()}; 
+                        </script>
+
+                    <audio id="audio1">
+                        <source src="/sounds/check.wav" type="audio/wav">  
+                    </audio>
+
+                    <a href="#" onClick="EvalSound('audio1'); setTimeout( function() { window.location.href = '/upkeep/preventative'}, 300);">
+                    
+                    <img class="click" id="mainbtn" src="/img/icons/check.png"/></a>
+                    <h3><strong>Preventative</strong></h3>
+                    <p id="desc">Annual & Seasonal suggested maintenance checklists</p>
+                </div>
+        </div>
+
+        <div>
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                        <audio id="audio2">
+                            <source src="/sounds/click.wav" type="audio/wav">
+                        </audio>
+
+                    <a href="#" onClick="EvalSound('audio2'); setTimeout( function() { window.location.href = '/upkeep/howto'}, 300);">
+            
+                    <img class="click" id="mainbtn" src="/img/icons/tools.png"/></a>
+                    <h3><strong>How Do I?</strong></h3>
+                    <p id="desc">Do it yourself home repair directory</p>
+                </div>
+        </div>
+
+        <div>
+                <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                        <audio id="audio3">
+                            <source src="/sounds/click2.wav" type="audio/wav">
+                        </audio>
+
+                    <a href="#" onClick="EvalSound('audio3'); setTimeout( function() { window.location.href = '/upkeep/findhelp'}, 300);">
+
+                    <img class="click" id="mainbtn" src="/img/icons/location.png"></a>
+                    <h3><strong>Professional Help</strong></h3>
+                    <pid="desc">Consult a Professional to troubleshoot or repair issues</p>
+                </div>
+        </div>
+
+    </div>
+</div>
+
+    
+            <!--FOOTER-->
+    <div class="footer">
+            <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
+    </div>

@@ -1,0 +1,130 @@
+                <!--NAVBAR-->
+                <nav class="navbar navbar-default" id="navbar">
+                        <div class="container-fluid">
+                              <div class="navbar-header">
+                                <a class="navbar-brand" href="/upkeep"><strong>up-keep</strong></a>
+                              </div>
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/upkeep/preventative">Preventative</a></li>
+                                    <li><a href="/upkeep/howto">How do I</a></li>
+                                    <li><a href="/upkeep/findhelp">Get Help</a></li>
+                                </ul>
+                        </div>
+                    </nav>
+
+        <div class="page-header">
+  <img id="checkheader" src="/img/pictures/check.jpg">
+</div>
+
+
+        <div class="container panel panel-default" id="howtodesc">
+            <h4 class="text-center">All of the suggested maintenance tasks are displayed below. Checking the boxes and then hitting the submit button will allow you to print, email, or send the tasks to your Calendar. You can also sort tasks by Category or Season.</h4>
+            </div>
+            
+            <div class="container dropdown1">
+              <select id="category" class="dropdown">
+                <option value="category">CATEGORY</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="HVAC">HVAC</option>
+                <option value="roofing">Roofing</option>
+                <option value="landscaping">Landscaping</option>
+                <option value="painting">Painting</option>
+                <option value="general home maintenance">General Home Maintenance</option>
+              </select>
+            </div>
+            <div class="container dropdown2">
+              <select id="season" class="dropdown">
+                <option value="season">SEASON</option>
+                <option value="annually">Annually</option>
+                <option value="all seasons">All Seasons</option>
+                <option value="spring">Spring</option>
+                <option value="summer">Summer</option>
+                <option value="fall">Fall</option>
+              </select>
+            </div>
+            </div>
+          </div>
+<br>
+          <div class="container checkbox" id="maintextarea">
+            <ul id="taskList">
+              {{#each task}}
+                {{#unless this.checked}}
+                    <li class="task" data-season="{{this.timeFrame}}" data-category="{{this.category}}"><label>
+                        <input id="{{this.id}}" name="{{this.task_name}}" class="exampleB" type="checkbox" value="">{{this.task_name}} ({{this.skillLevel}})
+                        {{!-- <a href="#" data-toggle="popover" data-trigger="hover" data-content= "{{this.description}}"> <img src="/img/icons/info.png"></a> --}}
+                        <a href="#" title="{{this.description}}" data-toggle="popover" data-trigger="hover" data-img= "{{this.imageLink}}"> <img src="/img/icons/camera1.png"></a>
+                        {{!-- <a href="#" data-toggle="popover" data-trigger="hover" data-content="Some content"><img src="/img/icons/question.png"></a> --}}
+                    </label></li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+          </div>
+
+              <div class="container">
+                
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-info btn-lg" onclick="getSelected()" data-toggle="modal" data-target="#myModal">Submit</button>
+              
+                <!-- Modal -->
+                <div id="printThis">
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Selected Tasks</h4>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                        <div title="Add to Calendar" class="addeventatc">
+                            Add to Calendar
+                            <span class="start">02/06/2018 08:00 AM</span>
+                            <span class="end">02/06/2018 10:00 AM</span>
+                            <span class="timezone">America/Los_Angeles</span>
+                            <span class="title">Summary of the event</span>
+                            <span class="description">Description of the event</span>
+                            <span class="location">Location of the event</span>
+                        </div>
+                        <button id="btnPrint" type="button" class="btn btn-default">Print</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+
+
+                    <!--FOOTER-->
+    <div class="footer-fixed">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="/upkeep/index"><strong>&copyup-keep</strong></a>
+                  </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="/upkeep/preventative">Preventative</a></li>
+                        <li><a href="/upkeep/howto">How do I</a></li>
+                        <li><a href="/upkeep/findhelp">Get Help</a></li>
+                  </ul>
+            </div>  
+    </div>
+    <div class="footer">
+        <p id="ftext"><strong>&copy 2017 up-keep</strong></p>  
+</div>
+
+<script>
+window.addeventasync = function(){
+    
+  addeventatc.register('button-dropdown-click', function(obj){
+      
+        /* Log */
+        console.log('button-dropdown-click -> ' + obj.id + ', service -> ' + obj.service);
+
+        /* Track event click with e.g. Google Analytics (using analytics.js)
+        https://developers.google.com/analytics/devguides/collection/analyticsjs/events */
+        ga('send', 'event', 'MyEvent', 'play', 'Fall Campaign');
+
+    });
+};
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Project Testing</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  
+</head>
+
+<body>
+  <div id="buttons">
+    <button id="searchButton">Video</button>
+    
+  </div>
+
+  <div id="yelp">
+  </div>
+
+  
+ 
+
+  
+ <script type="text/javascript">
+
+$("#searchButton").on("click", function(){
+    var yelpSearch1 = "PLUMBER";
+    var yelpSearch2 = "SALT LAKE CITY";
+    	
+    var queryURL = "https://api.yelp.com/v3/businesses/search?term="+yelpSearch1+"&location="+yelpSearch2+"&sort_by=rating&limit=5&key=aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
+    var queryURL2 = "https://api.yelp.com/oauth2/token"
+    
+    $.ajax({
+        header: {
+            Authorization: "Bearer aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
+        },
+		url:queryURL,
+		method:"GET"
+	}).done(function(result){
+		var searchResults = result.items;
+		for(var i=0; i < 5; i++) {
+            var name = searchResults[i].name;
+            var image = searchResults[i].image_url;
+            var URL = searchResults[i].url;
+            var rating = searchResults[i].rating;
+
+            $("#yelp").append(`<div class="how to">
+                <img src = "${image}">
+                ${name}
+                ${URL}
+                ${rating}
+            </div>`
+            );
+        };
+    });
+});
+			
+
+
+	
+</script>
+</body>
+</html>
+	
