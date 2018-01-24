@@ -136,6 +136,7 @@ input[type=checkbox].exampleB {
     background-color: rgb(247, 247, 247);
     color: rgb(87, 86, 86);
     text-align: center;
+    margin-top: 5%;
 }
 
 .footer-fixed {  
@@ -143,7 +144,7 @@ input[type=checkbox].exampleB {
     background-color: rgb(247, 247, 247);
     color: rgb(87, 86, 86);
     text-align: center;
-    margin-bottom: 0%;
+    bottom: 0;
     margin-top: 1%;
 }
 
