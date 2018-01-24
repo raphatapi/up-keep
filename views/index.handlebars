@@ -44,11 +44,25 @@
     </script>
     <!--/ Facebook Script -->
 
-    <!-- Facebook Login Button -->
-		<div id="fb-root"></div>
+<!-- Google Script -->
+<script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
 
-		<div id="status"></div>
-    <!--/ Facebook Login Button -->
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
+
+
     
                 <!--NAVBAR-->
         <nav class="navbar navbar-default" id="navbar">
@@ -61,6 +75,7 @@
                         <li><a href="/upkeep/howto">How do I</a></li>
                         <li><a href="/upkeep/findhelp">Get Help</a></li>
                         <li><div class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-max-rows="1" data-size="small" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div></li>
+                        <li><div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div></li>
                   </ul>
             </div>
         </nav>
