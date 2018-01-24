@@ -4,7 +4,9 @@ $(document).ready(function(){
 
         $("#searchButton").on("click", function(){
             $("#yelp").empty();
-            var yelpSearch = document.getElementById("yelpSearch").value;
+            var yelpSearch1 = document.getElementById("yelpTerm").value;
+            var yelpSearch2 = document.getElementById("yelpLocation").value;
+            var yelpSearch = "yelpSearch1" + "yelpSearch2";
             console.log("hello");
                 
             // do a GET to your Yelp endpoint in your server
