@@ -1,36 +1,29 @@
 $(document).ready(function(){
 
-    $("#searchButton").on("click", function(){
-        $("#yelp").empty();
-    var yelpSearch = document.getElementById("yelpSearch").value;
-    console.log("hello");
-        
-    var queryURL = "https://api.yelp.com/v3/businesses/search?term=" + yelpSearch + "&location=saltlakecity&sort_by=rating&limit=5"
-    
-    
-    $.ajax({
-        header: {
-            Authorization: "Bearer aPZGg2PjfUOmvrqGB-6y-FCO11Et4w0_04R7_XZm-LTkwmClkSebFC4-dmSaExcw4EyyoD05iU2yWTtfj8YS30k-2bq_ncc1yuVzPinhX5Sm8AfhJFanOTmdowpgWnYx"
-        },
-        url:queryURL,
-        method:"GET"
-        
-    }).done(function(result){
-        var searchResults = result.items;
-        for(var i=0; i < 5; i++) {
-            var name = searchResults[i].name;
-            var image = searchResults[i].image_url;
-            var URL = searchResults[i].url;
-            var rating = searchResults[i].rating;
-    
-            $("#yelp").append(`<div class="how to">
-                <img src = "${image}">
-                ${name}
-                ${URL}
-                ${rating}
-            </div>`
-            );
-        };
-    });
-    });
+    $(document).ready(function(){
+
+        $("#searchButton").on("click", function(){
+            $("#yelp").empty();
+            var yelpSearch = document.getElementById("yelpSearch").value;
+            console.log("hello");
+                
+            // do a GET to your Yelp endpoint in your server
+            $.get("/api/yelp/"+yelpSearch).done(function(result){
+                var searchResults = result.items;
+                for(var i=0; i < 5; i++) {
+                    var name = searchResults[i].name;
+                    var image = searchResults[i].image_url;
+                    var URL = searchResults[i].url;
+                    var rating = searchResults[i].rating;
+            
+                    $("#yelp").append(`<div class="how to">
+                        <img src = "${image}">
+                        ${name}
+                        ${URL}
+                        ${rating}
+                    </div>`
+                    );
+                };
+            });
+        });
     });
