@@ -257,13 +257,16 @@ input[type=checkbox].exampleB {
 display: none;
     }
     .page-header{
-        display: none;
+        height: auto;
+        width: auto;
     }
     .page-header1{
-        display: none;
+        height: auto;
+        width: auto;
     }
     .page-header2{
-        display: none;
+        height: auto;
+        width: auto;
     }
     
     @media only screen and (max-width: 768px) {
