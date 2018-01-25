@@ -124,7 +124,8 @@ input[type=checkbox].exampleB {
         height: 150px;
         
     }
-
+    
+    
     #helpheader{
         height: 150px;
         float: center;
@@ -139,6 +140,7 @@ input[type=checkbox].exampleB {
     
     .footer {
         position: fixed;
+        margin-top: 5%;
         left: 0;
         bottom: 0;
         width: 100%;
@@ -147,6 +149,7 @@ input[type=checkbox].exampleB {
     }
     
     .footer-fixed {  
+        
         width: 100%;
         background-color: rgb(247, 247, 247);
         color: rgb(87, 86, 86);
@@ -200,15 +203,7 @@ input[type=checkbox].exampleB {
     margin-right: 1%;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-    color: rgb(87, 86, 86);
-    margin-top: 5%;
-}
+
 
 
 .drophead{
