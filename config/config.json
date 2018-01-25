@@ -1,7 +1,12 @@
 {
     "development": {
       "username": "root",
+<<<<<<< HEAD
       "password": "m1Ner977",
+=======
+      "password": "",
+      "password": "root",
+>>>>>>> 2dad8d9dd00b9a4fc55f1bc82ede6f6216ce6ca9
       "database": "upkeep_db",
       "host": "127.0.0.1",
       "dialect": "mysql"
