@@ -230,6 +230,24 @@ input[type=checkbox].exampleB {
     filter: drop-shadow(4px 4px 4px rgb(48, 48, 48));
 }
 
+.page-header4{
+    width: auto;
+}
+
+section.featured-image a img{
+    height: 250px;
+    width: 250px;
+    float: left;
+
+}
+
+#purple{
+    height: 300px;
+    width: 100%;
+    -webkit-filter: drop-shadow(4px 4px 4px rgb(48, 48, 48));
+    filter: drop-shadow(4px 4px 4px rgb(48, 48, 48));
+}
+
 
 
 @media screen {
@@ -268,7 +286,13 @@ display: none;
         height: auto;
         width: auto;
     }
+
+   
     
+    
+  
+}
+
     @media only screen and (max-width: 768px) {
         #mainbtn{
             height: 35%;
